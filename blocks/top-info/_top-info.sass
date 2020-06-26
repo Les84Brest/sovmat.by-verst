@@ -1,0 +1,77 @@
+.top-line
+  display: flex
+  &__city
+    display: none
+    opacity: 0
+    width: 100%
+    justify-content: space-around
+    align-items: center
+    flex-direction: row
+    flex-wrap: nowrap
+    color: $light
+    padding-left: 15px
+    flex: 1 1 .33
+    transition: all 1s ease
+  &__info
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    flex-direction: row
+    flex-wrap: nowrap
+    color: $light  
+    &-item
+      margin: 0
+      padding: 0
+      display: inline-block
+      font-size: 15px
+      display: block
+      position: relative
+      i
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 0
+      span
+        display: inline-block
+        padding-left: 30px
+
+// выбор города
+.city-selector
+  position: relative
+  &__checked    
+    padding-right: 25px
+    &:before
+      content: ''
+      height: 0
+      width: 0
+      position: absolute
+      border-top: 7px solid $light
+      border-right: 7px solid transparent
+      border-left: 7px solid transparent
+      right: 5px
+      top: 50%
+      transform: translateY(-50%)
+  &__cities
+    list-style: none
+    display: none
+    background-color: rgba(#000000, 0.45)
+    margin: 0
+    padding: 0
+    color: $light
+    position: absolute
+    top: 40px
+    left: 0
+    z-index: 3 
+  &__city
+    cursor: pointer
+    padding: 10px
+    border-bottom: 1px solid $color_text
+    
+ 
+.selector-open
+  display: block
+.show-city
+  display: flex
+  opacity: 1
+      
+
