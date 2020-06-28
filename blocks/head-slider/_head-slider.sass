@@ -2,85 +2,73 @@
   display: none
 .head
   &__slider
-    min-width: 0
-    width: 100%
-    height: 100vh
     position: absolute
     top: 0
     left: 0
-    z-index: -1
-    padding: 0
-    margin: 0
-    &-btn
-      
+    width: 100%
+    height: 100vh
+    overflow-y: hidden
+    z-index: 0
+    
     &-item
-      min-width: 0
+      position: relative
+      background: url('../img/slide-1.jpg') center / cover no-repeat border-box
       width: 100%
-      height: 100vh
-      background-position: fixed center
-      background-size: cover
-      background-repeat: no-repeat
+      height: 100vh 
+      
+    &-info
+      width: 30vw
       position: absolute
-      top: 0
-      left: 0
-      overlay-y: scroll
-    &-description
+      top: 50vh
+      left: 10vw
+      background: inherit
+      padding: 20px 25px
+      border-radius: 7px
+      color: $light
+      box-shadow: 0 0 7px rgba(#000, 0.35)
       *
         position: relative
-      position: relative
-      background: inherit
-      width:  400px
-      top: 60%
-      left: 10%
-      transform: translateY(-50%)
-      box-shadow: 1px 1px 7px rgba(14,14,14,.55) 
-      // display: flex
-      // flex-direction: column
-      // justify-content: center
-      // align-items: center
-      padding: 30px 
-      color: $light
-      z-index: 1
       &::before
         content: ''
+        width: 100%
+        height: 100%
         top: 0
         bottom: 0
         left: 0
         right: 0
         position: absolute
         background: inherit
-        filter: blur(5px)
-        filter: blur(#blur)
-        z-index: -1
+        filter: blur(5px) brightness(79%)
+        background-position: left 14% top 55%
+        background-size: auto
+        border-radius: 7px
+        
+      
+    &-image
+      width: 100%
+      object-fit: contain
 
-      &::after
-        content: ''
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        position: absolute
-        background-color: rgba(#000, 0.25)
-        z-index: -1
-
-
-       
+          
     &-text-wrap
       padding-left: 20px
       border-left: 5px $accent solid 
+    &-text
+      margin-bottom: 20px
     &-btn
-      margin-right: 5px
-    
+      margin-right: 15px
+    &-buttons
+      display: flex
     &-title
       font-size: 28px
       line-height: 1
       font-weight: 900
       color: $light
-      margin-bottom: 10px
+      margin-bottom: 20px
       text-shadow: 1px 1px 2px rgba(#000,.4)
     &-text
       font-weight: normal
-/* Слайдер */
+
+  /* Слайдер */
 .slick-slider
 /* Слайдер запущен */
 .slick-slider.slick-initialized
@@ -118,13 +106,70 @@
 /* Элемент точки */
 .slick-dots li button
 
-.top-slider
+.head__slider
   .slick-arrow
     position: absolute
     top: 50%
-    z-index: 10
+    z-index: 1
     font-size: 0
+    background: transparent
+    border: none
+    outline: none
+    color: rgba($light, 0.55)
+    cursor: pointer
+    transition: color 0.3s ease-in
+    &:hover
+      color: $light
     &.slick-prev
-      left: 0
+      left: 3%
+      z-index: 5
+      &::before
+        content: '\e804'
+        font-family: 'fontello'
+        font-size: 43px
+        position: absolute
+        top: 0
+        left: 0
+       
     &.slick-next
-      right: 0
+      right: 3%
+      z-index: 5
+      &::before
+        content: '\e803'
+        font-family: 'fontello'
+        font-size: 43px
+        position: absolute
+        top: 0
+        left: 0
+  .slick-dots
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    left: 50%
+    bottom: 0%
+    
+  .slick-dots li
+    list-style: none
+  .slick-dots li.slick-active button
+    background: transparent
+    border: 1px rgba($light, 0.4) solid
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    &:hover
+       border: 1px $light solid
+       background: transparent
+
+  .slick-dots li button
+    font-size: 0
+    background-color: rgba($light, 0.4)
+    width: 10px
+    height: 10px
+    border-radius: 100%
+    border: none
+    outline: none
+    margin-left: 10px
+    cursor: pointer
+    &:hover
+       background: $light

@@ -4,14 +4,17 @@
 
  $(document).ready(function() {
   $('.head__slider').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true
+   arrows: true,
+   dots: true,
+   easing: 'ease-out',
+   speed: 500,
+
   });
   });
   
-  
+  let slideItems =[ {title: 'Пожаротушение',img: 'img/slide-1.jpg',text: 'Первое полустишие нивелирует метаязык. Диалектический характер просветляет экзистенциальный стиль. Заимствование текуче.'}, {title: 'Автоматизация систем управления',img: 'img/slide-2.jpg',text: 'Аллитерация аллитерирует хорей, но не рифмами. Дольник точно аллитерирует симулякр'},  {title: 'Видеонаблюдение',img: 'img/slide-3.jpg',text: 'Стилистическая игра нивелирует не-текст. Вопрос о популярности произведений того или иного'},]
+
+
 /**настройка select городов */
 
 let citySelector = document.querySelector('.city-selector__checked');

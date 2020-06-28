@@ -1,23 +1,15 @@
 //- head-slider
 .head__slider
-  //- .head__slider-i
-  //-   img(src="img/slide-1.jpg", alt="")
-  //- .head__slider-i
-  //-   img(src="img/slide-2.jpg", alt="")
-  div(style="background: url('img/slide-1.jpg');").head__slider-item
-    .head__slider-description
-      .head__slider-title Пожарная сигнализация 
-      .head__slider-text-wrap
-        p.head__slider-text Инвестиция отталкивает принцип восприятия. Выставочный стенд, как принято считать, обычно правомочен. Искусство медиапланирования конструктивно. 
-        .head__slider-buttons
-          a(href="#").btn.btn-accent.head__slider-btn  консультация
-          a(href="#").btn.btn-inverse.head__slider-btn подробнее
+  - var slideItems =[ {title: 'Пожаротушение',img: 'img/slide-1.jpg',text: 'Первое полустишие нивелирует метаязык. Диалектический характер просветляет экзистенциальный стиль. Заимствование текуче.'}, {title: 'Автоматизация систем управления',img: 'img/slide-2.jpg',text: 'Аллитерация аллитерирует хорей, но не рифмами. Дольник точно аллитерирует симулякр'},  {title: 'Видеонаблюдение',img: 'img/slide-3.jpg',text: 'Стилистическая игра нивелирует не-текст. Вопрос о популярности произведений того или иного'},]
+
+  each item in slideItems
+    .head__slider-item( style='background: url('+item.img+') center / cover no-repeat border-box;')
+      .head__slider-info
+        .head__slider-title=item.title
+        .head__slider-text-wrap
+          .head__slider-text=item.text
+          .head__slider-buttons
+            a(href="#").btn.btn-accent.head__slider-btn  консультация
+            a(href="#").btn.btn-inverse.head__slider-btn подробнее
+
     
-  div(style="background: url('img/slide-2.jpg');").head__slider-item
-    .head__slider-description
-      .head__slider-title Автоматизация систем управления 
-      .head__slider-text-wrap
-        p.head__slider-text Выставочный стенд, как принято считать, обычно правомочен. Искусство медиапланирования конструктивно. Инвестиция отталкивает принцип восприятия.
-        .head__slider-buttons
-          a(href="#").btn.btn-accent.head__slider-btn заказать осмотр	
-          a(href="#").btn.btn-inverse.head__slider-btn подробнее
