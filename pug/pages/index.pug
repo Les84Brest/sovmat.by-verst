@@ -1,6 +1,6 @@
 extends ../base/base.pug
 block doc-title
-	title Инвестстрой для Wordpress
+	title ООО "Совматстрой"
 
 	
 block append content
@@ -26,11 +26,75 @@ block append content
 						.top-nav__logo 
 						include ../../blocks/top-nav-menu/top-nav-menu.pug
 	section.section-about
+		include ../../blocks/about/about.pug
+	section.section-services
+		include ../../blocks/services/services.pug
+	section.section-partners.bg-gray
+		include ../../blocks/partners/partners.pug
+	section.section-testimonials
+	section.section-contacts
+	footer.footer.bg-gray
+		.footer__top
+			.container
+				.row
+					.col-md-3.col-sm-6
+						.footer__logo
+							img(src="img/sovmat-logo.svg" alt="логотип")
+							span.footer__logo-name ООО "Совматстрой"
+							p.footer__text Организация пожарной, охранной сигнализации, видеонаблюдения, пожаротушения, автоматизация процессов
+					.col-md-3.col-sm-6
+						h3.footer__title Адреса
+						.footer__infoblock.infoblock
+							.infoblock__icon
+								i.icon.icon-map-pin
+							.infoblock__text г. Барановичи, ул. Смоленская, 2а, офис 6
+						.footer__infoblock.infoblock
+							.infoblock__icon
+								i.icon.icon-map-pin
+							.infoblock__text г. Брест, ул. Героев обороны Брестской крепости, д. 15, офис 123
+						h3.footer__title Время работы
+						.footer__infoblock.infoblock
+							.infoblock__icon
+								i.icon.icon-work-time
+							.infoblock__text пн-пт 8:00 - 17:00 сб, вс выходной
+
+
+					.col-md-3.col-sm-6
+						h3.footer__title Услуги
+						nav.footer__service-list.service-list
+							ul.service-list__list
+								li.service-list__item
+									a(href="#").service-list__link Пожарная сигнализация
+								li.service-list__item
+									a(href="#").service-list__link  Охранная сигнализация
+								li.service-list__item
+									a(href="#").service-list__link  Видеонаблюдение
+								li.service-list__item
+									a(href="#").service-list__link  Проектирование
+								li.service-list__item
+									a(href="#").service-list__link  Пожаротушение
+								li.service-list__item
+									a(href="#").service-list__link  Автоматизация производ ственных процессов
+					.col-md-3.col-sm-6
+						h3.footer__title Контакты
+						.footer__infoblock.infoblock
+							.infoblock__icon
+								i.icon.icon-phone
+							.infoblock__text +375-29-999999999
+								small г. Барановичи
+						.footer__infoblock.infoblock
+							.infoblock__icon
+								i.icon.icon-phone
+							.infoblock__text +375-29-999999999
+								small г. Брест
+						a(href="#").btn.btn-accent Обратный звонок
+	.footer__bottom
 		.container
-			.col-md-12
-				p Восприятие марки деятельно концентрирует рейтинг, работая над проектом. Управление брендом притягивает мониторинг активности. Управление брендом позиционирует эмпирический медиавес, используя опыт предыдущих кампаний.
-				p Презентационный материал детерминирует нестандартный подход. Создание приверженного покупателя, безусловно, отталкивает рыночный презентационный материал, расширяя долю рынка. Интеграция подсознательно позиционирует рейтинг. Спонсорство консолидирует целевой сегмент рынка. Стимулирование сбыта, анализируя результаты рекламной кампании, амбивалентно.
-				p Показ баннера, вопреки мнению П.Друкера, наиболее полно ускоряет коллективный медиамикс. Рекламный блок позитивно ускоряет PR. Дело в том, что формирование имиджа тормозит межличностный стратегический рыночный план.
+			.row
+				.col-md-12
+					.footer__bottom-copyright &copy; ООО "Совматстрой" 2008-2020 
+		
+
 
 
 

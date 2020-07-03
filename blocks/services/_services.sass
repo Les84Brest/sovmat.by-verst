@@ -1,0 +1,73 @@
+/*services*/
+.services
+  &__title
+    text-align: center
+  &__tabs-nav
+    border-right: 15px solid $accent
+.tabs-nav
+  &__list
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    list-style: none
+    transition: background-color .3s ease
+    
+    .tab-active
+      background-color: #496686
+      position: relative
+      a
+        color: $accent
+        text-shadow: 1px 1px 1px rgba(#000, .75)
+      &:before
+        content: ''
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 0
+        height: 0
+        border: 10px transparent solid 
+        border-right: 10px $accent solid 
+       
+        
+
+  &__item
+    width: 100%
+    background-color: $dark
+    color: $light
+    text-decoration: none
+    width: 100%
+    display: block
+    padding: 23px
+    color: $light
+    text-align: center
+    font-size: 1.44rem
+    cursor: pointer
+    &:hover
+      background-color: #496686
+  
+
+
+    
+
+.tabs-body
+  &__item
+    width: 100%
+    min-height: 100%
+    display: none
+   
+    &.tab-active
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      
+  &__text
+    font-size: 25px
+    margin-bottom: 20px
+  &__title
+    font-size: 28px
+    display: block
+    margin-bottom: 20px
+  &__button
+    margin-right: 20px
+

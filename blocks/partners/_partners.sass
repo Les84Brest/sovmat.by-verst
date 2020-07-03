@@ -1,0 +1,70 @@
+/*partners*/
+
+.partners
+  &__list
+  &__text
+    text-align: center
+    margin-bottom: 20px   
+
+
+.partners__list
+  position: relative
+  padding: 0 3% 0 3%
+  
+  .slick-list
+    overflow: hidden
+  .slick-track
+    display: flex
+  .slick-arrow
+    position: absolute
+    top: 40%
+    transform: translateY(-50%)
+    cursor: pointer
+    z-index: 3
+    font-size: 0
+    outline: none
+    opacity: 0
+    transition: opacity 0.3s ease-in
+    
+    &.slick-prev
+      background: url(../img/prev_arrow.svg) 0 0 / 100% no-repeat
+      width: 50px
+      height: 50px
+      border: none
+      left: 3%
+         
+    &.slick-next
+      background: url(../img/next_arrow.svg) 0 0 / 100% no-repeat
+      width: 50px
+      height: 50px
+      border: none
+      right: 3%
+      
+  .slick-dots
+    list-style: none
+    display: flex
+    justify-content: center
+    flex-direction: row
+  .slick-dots li
+    margin-left: 10px
+    &:first-child
+      margin-left: 0
+  .slick-dots li.slick-active button
+    background: url(../img/slider-dot-active.svg) center center / 100% no-repeat
+    width: 20px
+    height: 20px
+    font-size: 0
+    border: none
+    outline: none
+  .slick-dots li button
+    background: url(../img/slider-dot.svg) center center / 100% no-repeat
+    width: 20px
+    height: 20px
+    font-size: 0
+    border: none
+    outline: none
+    &:hover
+
+.partners__list:hover .slick-arrow
+  opacity: 0.55
+

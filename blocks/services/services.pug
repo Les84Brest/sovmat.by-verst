@@ -1,0 +1,28 @@
+.container
+	h2.services__title Наши услуги
+	- var servItems = [ {name: 'Пожарная сигнализация',text: 'Исходя из структуры пирамиды Маслоу, креатив создает выставочный стенд. Торговая марка экономит пак-шот, учитывая современные тенденции. Продвижение проекта спорадически изменяет баинг и селлинг.',  bgImage: 'img/services/poj-sign.png'},  {name: 'Видеонаблюдение',text: 'Позиционирование на рынке обуславливает экспериментальный бюджет на размещение. Комплексный анализ ситуации развивает контент. Воздействие на потребителя, вопреки мнению П.Друкера',  bgImage: 'img/services/cctv.png'},  {name: 'Автоматизация систем управления',text: 'Километров кабеля',  bgImage: 'img/services/automat.png'},  {name: 'Охранная сигнализация',text: 'Вполне выполнимо. Рекламное сообщество синхронизирует социометрический формирование имиджа. Рыночная информация, в рамках сегодняшних воззрений, уравновешивает типичный',  bgImage: 'img/services/guard-sign.png'},  {name: 'Пожаротушение',text: 'До недавнего времени считалось, что позиционирование на рынке ускоряет бюджет на размещение. Восприятие марки стабилизирует креативный охват аудитории.',  bgImage: 'img/services/fire.png'},  {name: 'Проектирование',text: 'Продуктовый ассортимент, как следует из вышесказанного, синхронизирует выставочный стенд. Тем не менее, диктат потребителя трансформирует фирменный имидж.',  bgImage: 'img/services/projecting.png'},] ;
+	- var flag = true;
+	- var i = 0;
+	.row
+		.col-md-4
+			nav.services__tabs-nav
+				ul.tabs-nav__list
+					each item in servItems
+						li.tabs-nav__item(data-tab=i class=flag ? 'tab-active' : '')= item.name
+						- flag = false;
+						- i++;
+		.col-md-8
+			.services__tabs-body.tabs-body
+				- flag = true;
+				- i = 0;
+				each item in servItems
+					.tabs-body__item(style="background: url('" + item.bgImage + "') bottom right / auto no-repeat;" data-tab=i class=flag ? 'tab-active' : '')
+						- flag = false;
+						- i++;
+						h3.tabs-body__title= item.name
+						.tabs-body__text
+							p=item.text
+						.tabs-body__buttons
+							a(href="#").btn.btn-accent.tabs-body__button заказать консультацию
+							a(href="#").btn.btn-inverse.dark.tabs-body__button подробнее
+							

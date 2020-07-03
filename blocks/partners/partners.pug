@@ -1,0 +1,12 @@
+- photos = ['dlink.png','hickvision.png','hiwatch.png','rexant.png','tplink.png'];
+	.container
+		h2.partners__title Наши партнеры
+		.partners__text В своей работе мы используем материалы проверенных производителей
+		.row
+			.col-md-12
+				.partners__list
+					- photos = ['dlink.png','hickvision.png','hiwatch.png','rexant.png','tplink.png'];
+					each photo in photos
+						.partners__item
+						
+							img(src="img/partners/" + photo + " " alt="название партнера")

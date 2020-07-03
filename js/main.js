@@ -15,6 +15,72 @@
   let slideItems =[ {title: 'Пожаротушение',img: 'img/slide-1.jpg',text: 'Первое полустишие нивелирует метаязык. Диалектический характер просветляет экзистенциальный стиль. Заимствование текуче.'}, {title: 'Автоматизация систем управления',img: 'img/slide-2.jpg',text: 'Аллитерация аллитерирует хорей, но не рифмами. Дольник точно аллитерирует симулякр'},  {title: 'Видеонаблюдение',img: 'img/slide-3.jpg',text: 'Стилистическая игра нивелирует не-текст. Вопрос о популярности произведений того или иного'},]
 
 
+$( document ).ready(function() {
+  $('.partners__list').slick({
+    arrows: true,
+   dots: true,
+   easing: 'ease-out',
+   slidesToShow: 4,
+   slidesToScroll: 1,
+   speed: 500
+  });
+});
+  
+window.onload = function () {
+  function TabsBodyHeight(){
+    let tabs = document.querySelector('.tabs-nav__list');
+    let tabsList = document.querySelectorAll('.tabs-body__item');
+    let tabsHeight = tabs.offsetHeight;
+    
+    tabsList.forEach( tab => {
+      tab.style.height = tabsHeight + 'px';
+      console.log(tabsHeight);
+      
+    });
+
+  }
+
+  function ServiceTabs(){
+    let tabsNav = document.querySelectorAll('.tabs-nav__item');
+    let tabsList = document.querySelectorAll('.tabs-body__item');
+
+    tabsNav.forEach(item => {
+      item.addEventListener('click', SelectTabNav);
+    })
+
+    function SelectTabNav(){
+
+      tabsNav.forEach( item => {
+        item.classList.remove('tab-active');
+      });
+      this.classList.add('tab-active');
+      SelectTabContent(this.dataset.tab);
+   }
+
+   function SelectTabContent(num){
+    tabsList.forEach(item => {
+      if(item.dataset.tab == num){
+        item.classList.add('tab-active');
+      }else{
+        item.classList.remove('tab-active');
+      }
+    });
+   }
+  }
+
+  ServiceTabs();
+  TabsBodyHeight();
+  window.onresize = TabsBodyHeight;
+}
+
+
+
+$( document ).ready(function() {
+  $('.container>h2').each(function() {
+    let title = $(this);
+    title.html(title.html().replace(/((?<=(^|\n)\s*?)\S+)/, '<span>$1</span>'));
+  });
+});
 /**настройка select городов */
 
 let citySelector = document.querySelector('.city-selector__checked');
